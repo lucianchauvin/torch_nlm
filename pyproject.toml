@@ -3,10 +3,12 @@ name = "nlm-torch"
 version = "0.1.0"
 requires-python = ">=3.13"
 description = "PyTorch-based implementation of non-local means with GPU support."
-authors = ["lucianchauvin <me@lucianchauvin.com>", "josegcpa <jose.almeida@research.fchampalimaud.pt>"]
-license = "LICENSE"
+authors = [
+    { name = "lucianchauvin", email = "me@lucianchauvin.com" }, 
+    { name = "josegcpa",      email = "jose.almeida@research.fchampalimaud.pt" },
+]
+license = "MIT"
 readme = "README.md"
-packages = [{include = "torch_nlm"}]
 dependencies = [
     "einops>=0.8.1",
     "numpy>=2.3.0",
@@ -16,3 +18,5 @@ dependencies = [
     "torch>=2.7.1",
     "tqdm>=4.67.1",
 ]
+[tool.setuptools.packages.find]
+where = ["."]
