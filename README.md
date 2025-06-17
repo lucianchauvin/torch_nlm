@@ -32,18 +32,16 @@ In other words, the non-local means of a given pixel is the weighted average of 
 
 ### Installation
 
-To use this package all you have to do is clone and install this (a `pyproject.toml` is provided so that you can easily install this with [`poetry`](https://python-poetry.org/)). Alternatively, use `requirements.txt` with `pip` (i.e. `pip install -r requirements.txt`).
-
 **Installation with pip:** this is probably the version which will be the less painful to use: 
 
 ```bash
-pip install torch_nlm
+pip install nlm-torch
 ```
 
 Or, if you already have all the dependencies:
 
 ```bash
-pip install torch_nlm --no-dependencies
+pip install nlm-torch --no-dependencies
 ```
 
 **Installation with `setup.py`:** also easy to use: 
@@ -53,6 +51,8 @@ python setup.py install
 ```
 
 ### `torch_nlm` usage
+
+Otherwise you can clone the repo and install with `pip install SARIAD/`.
 
 Two main functions are exported: `nlm2d` and `nlm3d`, which are aliases for the most efficient `torch`-based NLMM versions (`apply_nonlocal_means_2d_mem_efficient` and `apply_nonlocal_means_3d_mem_efficient`), respectively. So if you want to apply it to your favourite image and have a CUDA compatible GPU:
 
