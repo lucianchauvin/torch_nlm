@@ -12,7 +12,11 @@ image_sizes = [[128,128],
                [1024,1024]]
 neighbourhood_sizes = [5,11,17,25,51,101]
 
-dev = "cuda:1"
+if torch.cuda.is_available():
+    dev = torch.device("cuda")
+else:
+    dev = torch.device("cpu")
+
 sd = 0.05
 kernel_size = 11
 salt_prob = 0.05

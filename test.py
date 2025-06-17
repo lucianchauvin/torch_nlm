@@ -10,7 +10,11 @@ from torch_nlm import nlm2d
 image_path = sys.argv[1]
 output_path = os.path.join(str(Path(image_path).parent),"test_output.jpg")
 
-dev = "cuda:1"
+if torch.cuda.is_available():
+    dev = torch.device("cuda")
+else:
+    dev = torch.device("cpu")
+
 sd = 0.05
 kernel_size = 51
 salt_prob = 0.05
@@ -29,7 +33,7 @@ image_with_noise = torch.where(
 image_with_noise = torch.clamp(image_with_noise,0,1)
 
 a = time.time()
-output = apply_nonlocal_means_2d_mem_efficient(
+output = nlm2d(
     image_with_noise,kernel_size=kernel_size,std=1.0,sub_filter_size=32)
 b = time.time()
 print("Ellapsed time:",b-a)
