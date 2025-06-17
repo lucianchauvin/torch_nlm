@@ -1,6 +1,6 @@
 [project]
 name = "nlm-torch"
-version = "0.1.0"
+version = "0.1.1"
 requires-python = ">=3.13"
 description = "PyTorch-based implementation of non-local means with GPU support."
 authors = [
